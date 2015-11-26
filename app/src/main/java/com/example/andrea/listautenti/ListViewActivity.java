@@ -3,6 +3,7 @@ package com.example.andrea.listautenti;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -133,12 +134,12 @@ public class ListViewActivity extends AppCompatActivity {
                 String new_element = data.getStringExtra("new_element");
                 String nome = data.getStringExtra("nome");
                 String indirizzo = data.getStringExtra("indirizzo");
-
-                utenti.add(new User(utenti.size()+1, nome, indirizzo));
-
-                Toast.makeText(getApplicationContext(),
-                        nome + " aggiunto.",
-                        Toast.LENGTH_LONG).show();
+                if(!TextUtils.isEmpty(nome) && !TextUtils.isEmpty(indirizzo)) {
+                    utenti.add(new User(utenti.size() + 1, nome, indirizzo));
+                    Toast.makeText(getApplicationContext(),
+                            nome + " aggiunto.",
+                            Toast.LENGTH_LONG).show();
+                }
             }
         }
     }
