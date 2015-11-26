@@ -1,6 +1,7 @@
 package com.example.andrea.listautenti;
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -32,14 +33,6 @@ public class ListViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
 
-
-
-        //creo e popolo Arraylist
-        User user1 = new User(1, "Andrea Girò", "6702 Claro");
-        User user2 = new User(2, "Carina Dionisio", "6900 Lugano");
-
-        utenti.add(user1);
-        utenti.add(user2);
 
         faiRefresh();
 
@@ -124,9 +117,6 @@ public class ListViewActivity extends AppCompatActivity {
     /*
      * Metodo con activity fired
      */
-
-
-
     protected void onActivityResult (int requestCode, int resultCode, Intent data) {
 
         if(requestCode == ADD_NEW_ELEMENT_REQUEST) {
@@ -149,6 +139,7 @@ public class ListViewActivity extends AppCompatActivity {
         super.onResume();
 
         faiRefresh();
-
     }
+
+
 }
