@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Lista Utenti</string>
+    <string name="title_activity_main_activitys">MainActivitys</string>
+    <string name="title_activity_main_activityss">MainActivityss</string>
 </resources>

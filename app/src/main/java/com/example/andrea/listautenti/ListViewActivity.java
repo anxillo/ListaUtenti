@@ -2,6 +2,8 @@ package com.example.andrea.listautenti;
 
 import android.content.Intent;
 import android.content.res.Configuration;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -48,6 +50,15 @@ public class ListViewActivity extends AppCompatActivity {
                 faiRefresh();
 
                 return false;
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent().setClass(getApplicationContext(), InfoFormActivity.class);
+                startActivityForResult(intent, ADD_NEW_ELEMENT_REQUEST);
             }
         });
 
